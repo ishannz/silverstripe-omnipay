@@ -370,7 +370,7 @@ final class Payment extends DataObject implements PermissionProvider
         return $this->Status == 'Captured';
     }
 
-    public function forTemplate()
+    public function forTemplate(): string
     {
         return $this->dbObject('Money');
     }
