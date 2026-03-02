@@ -422,14 +422,14 @@ abstract class PaymentService
         } elseif ($data instanceof \Exception) {
             $output = [
                 'Message' => $data->getMessage(),
-                'Code' => $data->getCode(),
+                'Code' => (string)$data->getCode(),
                 'Exception' => get_class($data),
                 'Backtrace' => $data->getTraceAsString()
             ];
         } elseif ($data instanceof AbstractResponse) {
             $output = [
                 'Message' => $data->getMessage(),
-                'Code' => $data->getCode(),
+                'Code' => (string)$data->getCode(),
                 'Reference' => $data->getTransactionReference(),
                 'Data' => $data->getData()
             ];
